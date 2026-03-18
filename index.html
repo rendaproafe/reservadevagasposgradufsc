@@ -146,10 +146,10 @@
     <div class="resultado" id="resultado"></div>
   </div>
 
-  <script>
-    function arredondarVaga(valor) {
-      return valor < 1 && valor > 0 ? 1 : Math.round(valor);
-    }
+function arredondarVaga(valor) {  
+  if (valor > 0 && valor < 1) return 1;
+  return Math.round(valor + 0.00001);
+} 
 
     function calcular() {
       const total = parseFloat(document.getElementById('totalVagas').value);
